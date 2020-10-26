@@ -1,0 +1,580 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+*,*::before,*::after{
+	box-sizing: border-box;
+	text-decoration: none;
+}
+/* layout css */
+:root{
+  --green: #00cc99; 
+  --black: #323228;
+  --gray: #ebebeb;
+  --deep-gray:#9c9c9c;
+}
+.wrap{
+	max-width: 1080px;
+	margin: 0 auto;
+	position: relative;
+
+}
+/* Common Component  start 共用元件*/
+.btn-lg{
+	padding: 14px 40px;
+	background-color: var(--green);
+	font-size: 18px;
+	border-radius: 5px;
+	font-weight: 600;
+	color: #fff;
+	transition: .3s;
+	cursor: pointer;
+}
+.btn-lg:hover{
+	background-color: rgb(19, 167, 167);
+}
+.btn-sm{
+	padding: 6px 12px;
+	border-radius: 3px;
+	color: var(--green);
+	border: 2px solid var(--green);
+	font-weight: 600;
+	transition: .3s;
+	cursor: pointer;
+}
+.btn-sm:hover{
+	color: white;
+	background-color: var(--green);
+}
+.jumbotron{
+   height: 600px;
+   font-size: 48px;
+   line-height: 1.5;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   padding-left: 45px;     
+}
+.title-txt{
+   color: var(--deep-gray);
+   font-size: 18px;
+   margin-bottom: 20px;
+}
+.title-txt span{
+   color: var(--green);
+   font-size: 36px;
+   margin-right: 10px;
+}
+@media(max-width:767px){
+	.jumbotron{
+		height: 400px;
+		font-size: 30px;
+		padding-left: 20px;
+	}
+	.title-txt span{
+		font-size: 24px;
+		display: block;
+	}
+}
+/* Common Component End*/
+
+
+/* header */
+.wrap .header{ 
+	padding: 0 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(255,255,255,.2);
+	position: absolute;
+	width: 100%;
+}
+.header h2 a{
+	display: block;
+	width: 182px;
+	height: 36px;
+	background: url('../images/logo.png') no-repeat center center ;
+	text-indent: 101%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.header .menu{
+	display: flex;
+}
+.header .menu li{
+	width: 60px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	margin: 0 10px;
+}
+.header .menu li a{
+	color: #fff;
+}
+.header .menu li:hover{
+	border-bottom: 6px solid var(--green) ;	
+}
+.header .menu li:hover a{
+	color: var(--green);
+}
+.header .menu a{
+   display: block;
+   font-weight: 600;
+}
+/* 手機板選單樣式 */
+.header .menu-toggle{
+	font-size: 36px;
+	color: #fff;
+	display: none;
+}
+.toggle{
+	transform: scale(0);
+	position: absolute;
+	overflow: hidden;
+}
+@media(max-width:767px){
+	.wrap .header{
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: var(--green);
+		opacity: .8;
+	}	
+    .header .menu-toggle{
+		display: block;
+		padding: 10px 0;
+	}
+    .header .menu{
+		display: block;
+		position: fixed;
+		top:0;
+		font-size: 24px;
+		right: -40%;
+		width: 40%;
+		height: 100vh;
+		padding: 20px ;
+		background-color:var(--green);
+	}
+	.header .menu li a{
+		color: #fff;
+	}
+	.header .menu li a:hover{
+		color: var(--black);
+	}
+	#toggle:checked ~ .wrap .menu{
+        right: 0;
+	}
+	#toggle:checked ~ .wrap{
+		right: 40%;
+	}
+	#toggle:checked ~ .wrap .header{
+		left: -40%;
+	}
+}
+
+/* footer */
+.footer{
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--black);
+}
+.footer .logo{
+	font-family: Arial;
+	color: #8a8a89;
+	text-align: right;
+}
+.footer .social-icons{
+	display: flex;
+}
+.footer .social-icons a{
+   display: block;
+   width: 35px;
+   height: 35px;
+   background-color: #fff;
+   margin: 0 10px;
+   background-repeat: no-repeat;
+   position: relative;
+}
+.footer a.facebook{
+	background: url('../images/fb.png');
+}
+.footer a.twitter{
+	background: url('../images/tw.png');
+}
+.footer a.ig{
+	background: url('../images/ig.png');
+}
+.footer .social-icons a::before{
+	content: '';
+	transform: scale(0);
+	transition: .3s;
+    width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	position: absolute;
+	opacity: .6;
+	top: 0;
+	left: 0;
+}
+.footer .social-icons a.facebook::before{
+	background-color: blue;
+}
+.footer .social-icons a.twitter::before{
+	background-color: rgb(72, 167, 255);
+}
+.footer .social-icons a.ig::before{
+	background-color: rgb(240, 72, 255);
+}
+.footer .social-icons a:hover::before{
+	transform: scale(1);
+}
+
+/* jumbotron-index */
+.jumbotron-index{ 
+   background: url('../images/bg_index.png') no-repeat;
+   background-size: cover; 
+}
+.jumbotron-index h1{
+	color: var(--green);
+	margin-bottom: 25px; 
+	font-weight: 500;
+}
+.jumbotron-index span{
+	color: white;
+}
+
+.jumbotron-index .btn i{
+	margin-left: 15px;
+}
+
+/* course-index */
+.course{
+	padding: 30px 40px;
+}
+.course-title{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 30px;
+}
+.course-cards{
+	display: flex;
+	justify-content: space-between;
+}
+.course-cards .card{
+	width: 32%;	
+	box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+}
+.course-cards .img{
+	padding: 20px 0 5px 0;
+	text-align: center;
+}
+.course-cards .txt{
+   padding: 18px 18px 36px 18px;
+}
+.course-cards .txt h3{
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.course-cards .txt P{
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 600;
+	color: var(--deep-gray);
+}
+/* 手機板樣式 */
+@media(max-width:767px){
+	.course-title{
+		display: none;
+	}
+	.course-cards{
+		display: block;
+	}
+	.course-cards .card{
+		width: 98%;
+		margin-bottom: 30px;
+	}
+}
+/* competition  */
+.competition{
+	padding: 30px 40px;
+}
+.competition table{
+	width: 100%;
+	margin-top: 30px;
+}
+.competition th{
+	background-color: var(--gray);
+}
+.competition th,
+.competition td{
+	width: 25%;
+	padding: 18px 0;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 2px solid var(--gray);
+}
+.competition th.green,
+.competition td.green{
+	color: var(--green);
+}
+@media(max-width:767px){
+	.competition{
+		display: none;
+	}
+}
+/* submit */
+.submit{
+	background-color: var(--gray);
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	padding: 60px 50px;
+}
+.submit form{
+	width: 48%;
+}
+.submit h2{
+	font-size: 30px;
+	line-height: 1.8;
+	font-weight: bold;
+}
+.submit input{
+	display: block;
+	width: 100%;
+	padding: 15px 10px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 20px;
+}
+.submit .btn-lg{
+	width: 25%;
+	padding: 10px 40px;
+	margin-left: auto;
+}
+@media(max-width:767px){
+	.submit{
+	    display: block;
+		padding: 30px 25px; 
+	}
+	.submit h2{
+		font-size: 20px; 
+		text-align: center;
+	}
+	.submit form{
+		width: 95%;
+	}
+	.submit .btn-lg{
+		padding: 5px 10px;
+	}
+}
+
+/********* 課程頁面 ***********/
+
+/* jumbotron-course  */ 
+.jumbotron-course{
+	background-image: url('../images/bg_course.png');
+	background-size: cover;
+}
+.jumbotron-course h1{
+	color: white;
+}
+.jumbotron-course p{
+	color: var(--green);
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+/* course-info */
+.course-info{
+	padding: 60px 220px;
+}
+.course-info .teacher{
+	display: flex;
+	align-items: center;
+	margin-bottom: 60px;
+}
+.course-info .teacher h3 {
+	color: var(--green);
+	line-height: 1.5;
+	font-size: 36px;
+	margin-left: 30px;
+	font-weight: 600; 
+}
+.course-info .teacher span{
+	color: var(--black);
+}
+.teacher ul{
+	color: var(--deep-gray);
+	line-height: 1.5;
+	font-weight: 600;
+	list-style: disc ;
+	margin-left: auto;
+}
+.course-special{
+	margin-bottom: 30px;
+}
+.course-special h3 span{
+	margin-right: 60px;
+}
+.course-special ol{
+	list-style: decimal;
+	margin-left: 20px;
+}
+.course-special li{
+	text-indent: 16px;
+	line-height: 1.8;
+	font-weight: 600;
+}
+.course-outline P{
+	padding: 18px 40px;
+	font-weight: 600;
+}
+.course-outline P:nth-child(even){
+	background-color: var(--gray);
+}
+.course-submit{
+	height: 395px;
+	background-color: var(--gray);
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	padding: 30px 220px;
+}
+.course-submit h2{
+	font-size: 32px;
+	line-height: 1.8;
+	font-weight: 600;
+}
+@media(max-width:768px){
+	.course-info{
+		padding: 30px 25px;
+	}	
+	.course-info .teacher img{
+        width: 45%;
+	}
+	.course-submit{
+		padding: 30px 50px;
+	}
+}
+@media(max-width:767px){
+	.course-info .teacher{
+		flex-direction: column;
+	}
+	.course-info .teacher span{
+		display: none;
+	}
+	.course-info .teacher h3{
+		margin: 0 0 10px 0;
+	}
+	.course-info .teacher ul{
+		margin: 0 auto;
+	}
+	.course-special{
+		display: none;
+	}
+	.course-submit{
+		flex-direction: column;
+		justify-content: space-around;
+		height: 250px;
+	}
+	.course-submit h2{
+		font-size: 24px;
+	}
+}
+
+/************ FAQ頁面 **************/
+
+.jumbotron-faq{
+	align-items: center;
+	background-image: url('../images/bg_QA.png');
+	background-size: cover;
+	color: white;
+}
+.jumbotron-faq p{
+	color: var(--green);
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: 600;
+}
+.jumbotron-faq form{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.jumbotron-faq form input{
+	padding:12px; 
+	border: none;
+	width: 50%;
+	border-radius: 8px 0 0 8px;
+	outline: none;
+}
+.jumbotron-faq form button{
+	padding: 12px;
+	border: none;
+	background-color: #fff;
+	border-radius: 0 8px 8px 0;
+	outline: none;
+	font-size: 24px;
+}
+.faq{
+	padding: 60px 80px;
+}
+.faq h4{
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+.faq p{
+	line-height: 1.5;
+	color: var(--deep-gray);
+	font-weight: 600;
+	margin-bottom: 35px;
+}
+.faq ul{
+	list-style: decimal;
+	text-indent: 16px;
+	margin: -35px 0 30px 35px;
+	color: var(--deep-gray);
+	font-weight: 600;
+	line-height: 1.2;
+}
+.faq ul h4{
+	font-size: 16px;
+	color: var(--black);
+}
+.faq ul li{
+	padding: 5px 0;
+}
+.faq-submit textarea{
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 15px 10px;
+}
+.faq-submit{
+	align-items: flex-start;
+	padding-top: 120px;
+}
+@media(max-width:768px){
+	.jumbotron-faq p{
+		font-size: 18px;
+	}
+	.faq h4{
+		font-size: 16px;
+	}
+	.faq{
+		padding: 20px;
+	}
+}
+
+
+
+
+
+
+
+
+ 
