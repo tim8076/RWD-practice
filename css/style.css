@@ -336,6 +336,9 @@
 }
 .submit form{
 	width: 48%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 .submit h2{
 	font-size: 30px;
@@ -343,7 +346,6 @@
 	font-weight: bold;
 }
 .submit input{
-	display: block;
 	width: 100%;
 	padding: 15px 10px;
 	border-radius: 5px;
@@ -353,7 +355,7 @@
 .submit .btn-lg{
 	width: 25%;
 	padding: 10px 40px;
-	margin-left: auto;
+	align-self: flex-end;
 }
 @media(max-width:767px){
 	.submit{
@@ -428,11 +430,11 @@
 	line-height: 1.8;
 	font-weight: 600;
 }
-.course-outline P{
+.course-list li{
 	padding: 18px 40px;
 	font-weight: 600;
 }
-.course-outline P:nth-child(even){
+.course-list li:nth-child(even){
 	background-color: var(--gray);
 }
 .course-submit{
@@ -447,6 +449,11 @@
 	font-size: 32px;
 	line-height: 1.8;
 	font-weight: 600;
+}
+@media(max-width:960px){
+	.course-info{
+		padding: 40px 120px;
+	}
 }
 @media(max-width:768px){
 	.course-info{
@@ -518,6 +525,7 @@
 	border-radius: 0 8px 8px 0;
 	outline: none;
 	font-size: 24px;
+	cursor: pointer;
 }
 .faq{
 	padding: 60px 80px;
@@ -535,7 +543,7 @@
 .faq ul{
 	list-style: decimal;
 	text-indent: 16px;
-	margin: -35px 0 30px 35px;
+	margin: -15px 0px 15px 35px;
 	color: var(--deep-gray);
 	font-weight: 600;
 	line-height: 1.2;
